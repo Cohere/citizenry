@@ -36,6 +36,12 @@ common:
   search: sql
   mentoring: false # enables experimental mentor matching features
 
+  image_upload:
+    # if you choose storage: s3, uncomment bucket, access_key_id, and secret_access_key with your s3 credentials
+    storage: s3
+    s3_credentials:
+      bucket: citizenry-images
+
 development:
   auth_credentials:
     github:
