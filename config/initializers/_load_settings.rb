@@ -2,6 +2,7 @@
 settings_yml = HashWithIndifferentAccess.new(YAML.load_file(Rails.root.join('config', 'settings.yml')))
 
 [:twitter, :facebook, :linked_in].each do |provider|
+ settings_yml[:common][:auth_credentials][provider] = []
  [:key, :secret].each do |sub|
    settings_yml[:common][:auth_credentials][provider][sub] = ENV["#{provider}_#{sub}"]
  end
