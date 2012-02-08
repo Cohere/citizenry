@@ -15,6 +15,9 @@ common:
 #    - github
 #    - foursquare
   auth_credentials:
+    twitter: {}
+    facebook: {}
+    linked_in: {}
 #    auth_credentials set via environment variables in initializer
   organization:
     name: Fort Collins Community

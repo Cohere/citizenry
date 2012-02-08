@@ -2,13 +2,12 @@
 settings_yml = HashWithIndifferentAccess.new(YAML.load_file(Rails.root.join('config', 'settings.yml')))
 
 [:twitter, :facebook, :linked_in].each do |provider|
- settings_yml[:common][:auth_credentials][provider] = {}
  [:key, :secret].each do |sub|
    settings_yml[:common][:auth_credentials][provider][sub] = ENV["#{provider}_#{sub}"]
  end
 end
 [:hoptoad,:secret_token,:session_cookie_key].each do |sub|
-   settings_yml[:common][sub] = ENV[sub.to_s]
+  settings_yml[:common][sub] = ENV[sub.to_s]
 end
 
 merged_settings = settings_yml['common']
