@@ -1,6 +1,7 @@
 # Load application settings from config/settings.yml
 settings_yml = HashWithIndifferentAccess.new(YAML.load_file(Rails.root.join('config', 'settings.yml')))
 
+settings_yml[:common][:auth_credentials] = []
 [:twitter, :facebook, :linked_in].each do |provider|
  settings_yml[:common][:auth_credentials][provider] = []
  [:key, :secret].each do |sub|
