@@ -17,6 +17,7 @@ gem 'pg'
 
 
 gem 'hoptoad_notifier'
+gem 'unicorn'
 
 #--[ Utility ]------------------------------------------------------------------
 gem 'httparty', '~> 0.8.0'
