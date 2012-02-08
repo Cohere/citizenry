@@ -43,8 +43,8 @@ en:
         one: Project
         other: Projects
       resource_link:
-        one: Ressource
-        other: Ressources
+        one: Resource
+        other: Resources
       user:
         one: User
         other: Users
