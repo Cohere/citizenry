@@ -1,0 +1,51 @@
+# environent-specific settings will be deep merged with the common hash, overriding values therein
+
+common:
+  # Language locale to use, see http://en.wikipedia.org/wiki/ISO_639-1 for list of valid names. The locale is used to lookup a file with the matching name, e.g. translation file "config/locales/en.yml" for locale "en":
+  locale: en
+  # Timezone to use by default, run `bundle exec rake time:zones:all` to list valid names:
+  time_zone: 'Mountain Time (US & Canada)'
+  providers:
+    - twitter
+#    - open_id
+    - google
+#    - yahoo
+    - facebook
+    - linked_in
+#    - github
+#    - foursquare
+#    auth_credentials set via environment variables in initializer
+  organization:
+    name: Fort Collins Community
+    city: Fort Collins
+    state: CO
+    url: http://nocofolo.composition9.com
+    twitter: coherellc
+    email: coherecitizen@gmail.com
+    host: FoCo Ruby
+    host_url: http://meetup.com/focoruby
+    logotype: <span>NoCo</span>FoLo
+  mailer:
+    # delivery specific settings should be set in environment configs below
+    # (you don't want to send out real emails in tests, do you?)
+    default_from: contact@domain.localhost
+  search: sql
+  mentoring: false # enables experimental mentor matching features
+
+development:
+  auth_credentials:
+    github:
+      key: developmentkey
+      secret: devseekrit!
+  mailer:
+    # passed to ActionMailer (overrides values in config/environments/*.rb)
+    # http://edgeguides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration
+    raise_delivery_errors: false # ActionMailer::Base.raise_delivery_errors = false
+    #delivery_method: :smtp       # ActionMailer::Base.delivery_method = :smtp
+    #smtp_settings:               # ActionMailer::Base.smtp_settings = { ... }
+    #  domain: domain.org
+    #  address: smtp.domain.org
+    #  port: 25
+    #  user_name: smtp_user
+    #  password: smtp_password
+    #  authentication: plain
