@@ -16,7 +16,7 @@ gem 'pg'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 
 
-gem 'hoptoad_notifier'
+#gem 'hoptoad_notifier'
 gem 'unicorn'
 
 #--[ Utility ]------------------------------------------------------------------
