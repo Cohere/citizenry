@@ -12,7 +12,7 @@ end
 [:hoptoad,:secret_token,:session_cookie_key].each do |sub|
   settings_yml[:common][sub] = ENV[sub.to_s]
 end
-[:address,:domain,:port,:user_name,:password].each do |sub|
+[:address,:port,:user_name,:password].each do |sub|
   settings_yml['common']['mailer']['smtp_settings'][sub] = ENV["mailer_#{sub}"]
 end
 merged_settings = settings_yml['common']
