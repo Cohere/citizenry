@@ -37,7 +37,7 @@ common:
     delivery_method: :smtp       # ActionMailer::Base.delivery_method = :smtp
     smtp_settings:               # ActionMailer::Base.smtp_settings = { ... }
       enable_starttls_auto: true
-      authentication: plain
+      authentication: :plain
   search: sql
   mentoring: false # enables experimental mentor matching features
 
