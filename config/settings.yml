@@ -35,7 +35,9 @@ common:
     default_from: admin@nocofolo.com
     raise_delivery_errors: true  # ActionMailer::Base.raise_delivery_errors = false
     delivery_method: :smtp       # ActionMailer::Base.delivery_method = :smtp
-    smtp_settings: {}            # ActionMailer::Base.smtp_settings = { ... }
+    smtp_settings:               # ActionMailer::Base.smtp_settings = { ... }
+      enable_starttls_auto: true
+      authentication: plain
   search: sql
   mentoring: false # enables experimental mentor matching features
 
