@@ -13,9 +13,15 @@ end
   settings_yml[:common][sub] = ENV[sub.to_s]
 end
 [:address,:domain,:port,:user_name,:password,:authentication,:enable_starttls_auto].each do |sub|
-  settings_yml[:common][:mailer][:smtp_settings][sub] = ENV["mailer_#{sub}"]
+  settings_yml['common']['mailer']['smtp_settings'][sub] = ENV["mailer_#{sub}"]
 end
 merged_settings = settings_yml['common']
 merged_settings.deep_merge!(settings_yml[Rails.env]) if settings_yml.has_key?(Rails.env)
 
 SETTINGS = merged_settings
+
+SETTINGS['mailer'] ||= {}
+
+SETTINGS['mailer'].each do |key,value|
+  ActionMailer::Base.send("#{key}=", value) if ActionMailer::Base.respond_to?("#{key}=")
+end
