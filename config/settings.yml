@@ -32,7 +32,7 @@ common:
   mailer:
     # delivery specific settings should be set in environment configs below
     # (you don't want to send out real emails in tests, do you?)
-    default_from: admin@nocofolo.com
+    default_from: app2822474@heroku.com
     raise_delivery_errors: true  # ActionMailer::Base.raise_delivery_errors = false
     delivery_method: :smtp       # ActionMailer::Base.delivery_method = :smtp
     smtp_settings:               # ActionMailer::Base.smtp_settings = { ... }
