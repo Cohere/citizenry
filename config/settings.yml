@@ -33,6 +33,9 @@ common:
     # delivery specific settings should be set in environment configs below
     # (you don't want to send out real emails in tests, do you?)
     default_from: admin@nocofolo.com
+    raise_delivery_errors: true  # ActionMailer::Base.raise_delivery_errors = false
+    delivery_method: :smtp       # ActionMailer::Base.delivery_method = :smtp
+    smtp_settings: {}            # ActionMailer::Base.smtp_settings = { ... }
   search: sql
   mentoring: false # enables experimental mentor matching features
 
@@ -41,12 +44,6 @@ common:
     storage: s3
     s3_credentials:
       bucket: citizenry-images
-  mailer:
-    # passed to ActionMailer (overrides values in config/environments/*.rb)
-    # http://edgeguides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration
-    raise_delivery_errors: false # ActionMailer::Base.raise_delivery_errors = false
-    delivery_method: :smtp       # ActionMailer::Base.delivery_method = :smtp
-    smtp_settings: {}            # ActionMailer::Base.smtp_settings = { ... }
 
 development:
   auth_credentials:
