@@ -23,5 +23,7 @@ SETTINGS = merged_settings
 SETTINGS['mailer'] ||= {}
 
 SETTINGS['mailer'].each do |key,value|
+  warn "setting mailer #{key}= #{value}"
   ActionMailer::Base.send("#{key}=", value) if ActionMailer::Base.respond_to?("#{key}=")
 end
+warn ActionMailer::Base.smtp_settings.inspect
