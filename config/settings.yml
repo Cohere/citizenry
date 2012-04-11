@@ -38,7 +38,7 @@ common:
     smtp_settings:               # ActionMailer::Base.smtp_settings = { ... }
       enable_starttls_auto: true
       authentication: :plain
-      port: 587
+      domain: nocofolo.com
   search: sql
   mentoring: false # enables experimental mentor matching features
 
