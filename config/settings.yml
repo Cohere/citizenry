@@ -38,7 +38,7 @@ common:
     smtp_settings:               # ActionMailer::Base.smtp_settings = { ... }
       enable_starttls_auto: true
       authentication: :plain
-      domain: nocofolo.com
+      domain: heroku.com
   search: sql
   mentoring: false # enables experimental mentor matching features
 
